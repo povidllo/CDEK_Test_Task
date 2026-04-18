@@ -66,7 +66,9 @@ export const NewsComponent = ({
         <div className="flex flex-col gap-4 p-5.25 max-w-156.25">
           <div className="flex flex-col gap-1.75">
             <h2 className="text-[21px] font-semibold">Бизнес</h2>
-            <div className="text-[12.3px] text-[#85888E]">{date}</div>
+            <div className="text-[12.3px] text-[#85888E]">
+              {isLoading ? "Загрузка" : isError ? "Ошибка Загрузки" : date}{" "}
+            </div>
           </div>
           <hr className="text-[#E2E2E4]" />
           <NewsListComponent

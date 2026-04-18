@@ -8,5 +8,9 @@ export async function fetchNews(
     `http://1e14c3489fcb.vps.myjino.ru:5000/api/v1/news/feed/company/short?perPage=${perPage}&page=${page}`,
   );
 
+  if (!response.ok) {
+    throw new Error(`Error: ${response.status}`);
+  }
+
   return response.json();
 }

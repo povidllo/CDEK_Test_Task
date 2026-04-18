@@ -40,7 +40,11 @@ export const NewsListComponent = ({
     );
   }
 
-  return isError || allCurrentNews?.length !== 0 ? (
+  if (isError) {
+    return <EmptyNewsComponent />;
+  }
+
+  return allCurrentNews?.length !== 0 ? (
     <>
       <div className="flex flex-col gap-3.5">
         {allCurrentNews &&
