@@ -6,6 +6,7 @@ import { LoadingSkeletonComponent } from "../LoadingSkeletonComponent/LoadingSke
 interface NewsListComponentProps {
   allCurrentNews: News[];
   totalPages: number;
+  perPage?: number;
   setPageNumber: React.Dispatch<React.SetStateAction<number>>;
   isLoading?: boolean;
   isError?: boolean;
@@ -20,6 +21,7 @@ interface NewsListComponentProps {
 export const NewsListComponent = ({
   allCurrentNews,
   totalPages,
+  perPage = 3,
   setPageNumber,
   Component,
   imageType,
@@ -31,7 +33,7 @@ export const NewsListComponent = ({
   if (isLoading) {
     return (
       <div className="flex flex-col gap-3.5">
-        {Array.from({ length: 3 }).map((_, idx) => (
+        {Array.from({ length: perPage }).map((_, idx) => (
           <LoadingSkeletonComponent key={idx} />
         ))}
       </div>

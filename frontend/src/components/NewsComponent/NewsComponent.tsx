@@ -50,6 +50,7 @@ export const NewsComponent = ({
           <NewsListComponent
             allCurrentNews={allCurrentNews || []}
             totalPages={totalPages ?? 1}
+            perPage={perPage}
             setPageNumber={setPageNumber}
             Component={OneCompanyNewsBlock}
             imageType="l"
@@ -71,6 +72,7 @@ export const NewsComponent = ({
           <NewsListComponent
             allCurrentNews={allCurrentNews || []}
             totalPages={totalPages ?? 1}
+            perPage={perPage}
             setPageNumber={setPageNumber}
             Component={OneBusinessNewsBlock}
             imageType="hd"
