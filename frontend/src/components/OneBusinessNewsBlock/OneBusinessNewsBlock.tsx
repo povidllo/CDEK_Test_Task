@@ -51,7 +51,7 @@ export const OneBusinessNewsBlock = ({
         </div>
         <div className="flex flex-wrap items-center gap-[3.5px] font-normal text-[12.3px] text-[#85888E]">
           <div className="flex gap-2">
-            {news.rubrics.map((rubric, rubricIndex) => (
+            {news.rubrics.map((rubric) => (
               <div key={rubric.id}>#{rubric.name}</div>
             ))}
           </div>
